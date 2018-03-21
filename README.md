@@ -1,2 +1,0 @@
-# MeetingTimer
-Created with CodeSandbox
