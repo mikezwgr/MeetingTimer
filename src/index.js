@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import Hello from "./Hello";
 import TimeBox from "./TimeBox.js";
 import Meeting from "./Meeting.js";
+import Admin from "./Admin.js";
 
 const styles = {
   fontFamily: "sans-serif",
@@ -17,6 +18,7 @@ class App extends React.Component {
     return (
       <div style={styles}>
         <h2>Protoyp eines Meeting Timers {"\u2728"}</h2>
+        <Admin />
         <Meeting />
       </div>
     );

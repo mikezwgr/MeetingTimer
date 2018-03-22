@@ -8,7 +8,8 @@ import fire from "./MyFirebase.js";
 class Meeting extends React.Component {
   constructor(props) {
     super(props);
-    let myMeeting = new MeetingData(new Date());
+    let myMeeting = new MeetingData();
+    myMeeting.startMeeting();
     let firstItem = new AgendaItem("First111", 180);
     firstItem.startAgendaItem();
     myMeeting.addAgendaItem(firstItem);

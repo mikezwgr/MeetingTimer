@@ -1,31 +1,37 @@
 class MeetingData {
-  constructor(start) {
-    this.start_time = start;
-    this.currTime = start;
+  constructor() {
+    this.start_time = null;
+    this.currTime = null;
     this.planedTime = 0;
     this.meetingName = "default Name";
     this.end_time = null;
     //perhabs map is better
-    this.agendaItems = [];
+    this.agendaItems = new Map();
     this.activAgendaItem = null;
+    this.iter = null;
+  }
+
+  startMeeting() {
+    this.start_time = new Date();
+    this.currTime = this.start_time;
   }
 
   addAgendaItem(item) {
-    if (this.agentItems == null) {
-      this.activAgendaItem = 0;
+    if (this.agendaItems.size === 0) {
+      this.activAgendaItem = item;
     }
-    this.agendaItems.push(item);
+    this.agendaItems.set(item.getName(), item);
+    // this.iter = this.agendaItems.values;
   }
   clearAgenda() {
-    this.agendaItems = [];
+    this.agendaItems = new Map();
     this.activAgendaItem = null;
   }
   getActiveAgendaItem() {
-    return this.agendaItems[this.activAgendaItem];
+    return this.activAgendaItem;
   }
   nextAgendaItem() {
-    this.activAgendaItem += 1;
-    return this.getActiveAgendaItem();
+    return ""; // this.iter.next().value;
   }
   //Beendet das Meeting
   endMeeting() {
