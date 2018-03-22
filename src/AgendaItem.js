@@ -1,3 +1,4 @@
+/* One Agenda ITem */
 class AgendaItem {
   constructor(name, planedTime) {
     this.name = name;
@@ -14,9 +15,11 @@ class AgendaItem {
     this.end_time = new Date();
   }
   secondsElapsed(currTime) {
-    return (currTime - start_time) / 1000;
+    return (currTime - this.start_time) / 1000;
   }
   getName() {
     return this.name;
   }
 }
+
+export default AgendaItem;

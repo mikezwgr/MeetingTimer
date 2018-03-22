@@ -7,14 +7,18 @@ import PropTypes from "prop-types";
 class StatusAgendaItem extends React.Component {
   constructor(props) {
     super(props);
-    //  this.state = { meeting: new MeetingData(new Date()) };
+    //ToDo delete construtor
   }
+
   render() {
     return (
-      <TimeBox
-        name={this.props.item.getName()}
-        sec={this.props.item.secondsElapsed(new Date())}
-      />
+      <div>
+        <TimeBox
+          name={this.props.item.getName()}
+          sec={this.props.item.secondsElapsed(new Date())}
+        />
+        <button onClick={this.props.klick}>Click me</button>
+      </div>
     );
   }
 }
@@ -24,4 +28,4 @@ StatusAgendaItem.PropTypes = {
   item: PropTypes.instanceOf(AgendaItem).isRequired
 };
 
-export default AgendaItem;
+export default StatusAgendaItem;

@@ -6,14 +6,26 @@ class MeetingData {
     this.meetingName = "default Name";
     this.end_time = null;
     //perhabs map is better
-    this.agendaItems = new Set();
+    this.agendaItems = [];
+    this.activAgendaItem = null;
   }
 
   addAgendaItem(item) {
-    this.agendaItems.add(item);
+    if (this.agentItems == null) {
+      this.activAgendaItem = 0;
+    }
+    this.agendaItems.push(item);
   }
   clearAgenda() {
-    this.agendaItems = new Set();
+    this.agendaItems = [];
+    this.activAgendaItem = null;
+  }
+  getActiveAgendaItem() {
+    return this.agendaItems[this.activAgendaItem];
+  }
+  nextAgendaItem() {
+    this.activAgendaItem += 1;
+    return this.getActiveAgendaItem();
   }
   //Beendet das Meeting
   endMeeting() {
